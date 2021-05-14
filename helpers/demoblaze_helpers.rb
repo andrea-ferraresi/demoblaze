@@ -97,7 +97,7 @@
   end
 
 
-  def credit_locator_card_in_place_order_form
+  def creditCard_locator_in_place_order_form
     "card"
   end
 
@@ -108,7 +108,7 @@
   end
 
 
-  def year_card_in_place_order_form
+  def year_in_place_order_form
     "card"
   end
 
@@ -129,7 +129,7 @@
   end
 
 
-  def credit_card_in_place_order_form
+  def creditCard_in_place_order_form
     "#card"
   end
 
@@ -147,7 +147,4 @@
   end
 
 
-
-
-p.lead.text-muted
 
