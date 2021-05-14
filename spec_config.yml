@@ -1,0 +1,9 @@
+
+
+#driver: 'chrome'
+driver: 'selenium_firefox'
+demoblaze_url: 'https://www.demoblaze.com/index.html'
+
+laptop_to_purchase: 'Sony vaio i5'
+
+
