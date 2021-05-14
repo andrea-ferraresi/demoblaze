@@ -47,20 +47,28 @@ feature "purchase a laptop" do
 
       expect(page).to have_selector( cart_list )
 
-#
+
 
       find(:xpath,delete_dell_i7_8gb_from_cart).click
 
+binding.pry
+
       find(:xpath,place_order_button).click
 
-      window = page.driver.browser.window_handles
+      binding.pry
+
+
+
+      #window = page.driver.browser.window_handles
 
       #page.driver.browser.switch_to.window(window.last)
       #purchaseForm_window = page.driver.browser.window_handles.last
 
       purchaseForm_window = windows.last
 
-      
+     binding.pry
+
+
 
       page.within_window purchaseForm_window do      
 
@@ -68,15 +76,51 @@ feature "purchase a laptop" do
 
         expect(page).to have_selector( purchase_order_button_in_place_order_form )
 
-        fill_in name_in_place_order_form, :with => "Pirandello"
+       binding.pry
 
-        fill_in country_in_place_order_form, :with => "Italy"
+        find(:css, name_in_place_order_form).click
 
-        fill_in city_in_place_order_form, :with => "Agrigento"
+    #    binding.pry
 
-        fill_in credit_card_in_place_order_form, :with => "123456778"
+        fill_in name_locator_in_placeOrder_form, :with => "Pirandello"
+
+     #   binding.pry
+
+        fill_in country_locator_in_place_order_form, :with => "Italy"
+
+    #    binding.pry
+
+        fill_in city_locator_in_place_order_form, :with => "Agrigento"
+
+        fill_in credit_locator_card_in_place_order_form, :with => "123456778"
+
+        fill_in month_in_place_order_form, :with => "12"
+
+        fill_in year_in_place_order_form, :with => "2023"
+
+        find(:css, purchase_order_button_in_place_order_form).click
 #
       end
+
+
+
+      orderConfirmation_window = windows.last
+
+      page.within_window purchaseForm_window do
+
+        expect(page).to have_selector( order_confirmation_information_lightbox )
+
+        expect(page).to have_selector( order_confirmation_information)
+
+
+
+
+
+
+      end
+
+
+
 
 #binding.pry 
 

@@ -82,6 +82,35 @@
   end
 
 
+  def name_locator_in_placeOrder_form
+    "name"
+  end
+
+  
+  def country_locator_in_place_order_form
+    "country"
+  end
+
+
+  def city_locator_in_place_order_form
+    "city"
+  end
+
+
+  def credit_locator_card_in_place_order_form
+    "card"
+  end
+
+
+
+  def month_in_place_order_form
+    "city"
+  end
+
+
+  def year_card_in_place_order_form
+    "card"
+  end
 
 
 
@@ -106,73 +135,19 @@
 
 
 
+# ORDER CONFIRMATION LIGHTBOX HELPERS
 
 
-
-  def does_page_have_redirect_lightbox?
-    page.has_selector?('#redirect_source')
+  def order_confirmation_information_lightbox
+    "div.sweet-alert.showSweetAlert.visible"
   end
 
-  def close_redirect_lightbox
-    'div.oeClose'
-  end
-
-  def title
-    "//title[starts-with(text(),'trivago: search')]"
-  end
-
-  def input_search_field
-    "js_querystring"
-  end 
-
-  def search_field
-    "#js_querystring"
-  end 
-
-  def search_suggestions
-    'ul.js-ssg-suggestions.ssg-suggestions li'
-  end
-
-  def close_checkin_calendar
-    'div.js_df_overlay.df_overlay.checkin span.icon-ic.icon-icn__ip-close_s'
-  end
-
-  def does_page_have_redirect_message?
-    page.has_selector?('div.hard_soft_notification_message')
-  end
-
-  def redirect_message_url
-    'div.hard_soft_notification_message a'
-  end
-
-  def hotel_list
-    '#js_itemlist>li'
-  end
-
-  def hotel_name_list
-    '#js_itemlist>li span.item_name'
-  end
-  
-  def hotel__all_available_deals__view_button
-    '#js_itemlist>li li[title="View all available deals"]>span.label'
-  end
-
-  def hotel__all_available_deals__deal_price_list
-    'div.slo-base div.deals_wrp.js_deals_wrp button.btn.btn_fo.btn_deal>span.arrow'
+  def order_confirmation_information
+    "p.lead.text-muted"
   end
 
 
-  def deal_with_redirect_message_or_lightbox
-    if ( does_page_have_redirect_lightbox? )
-        puts "does_page_have_redirect_lightbox?\n"
-        find(:css, close_redirect_lightbox).click
 
-    elsif ( does_page_have_redirect_message? )
-        puts "does_page_have_redirect_message?\n"
-        find(:css, redirect_message_url).click
-        
-    else 
-        # puts "no redirect\n"
 
-    end
-  end
+p.lead.text-muted
+
