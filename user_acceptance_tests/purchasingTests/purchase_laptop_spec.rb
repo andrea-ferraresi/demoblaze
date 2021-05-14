@@ -55,21 +55,26 @@ feature "purchase a laptop" do
 
       window = page.driver.browser.window_handles
 
-      page.driver.browser.switch_to.window(window.last)
+      #page.driver.browser.switch_to.window(window.last)
+      #purchaseForm_window = page.driver.browser.window_handles.last
 
-      expect(page).to have_selector( place_order_title_in_place_order_form )
+      purchaseForm_window = windows.last
 
-      expect(page).to have_selector( purchase_order_button_in_place_order_form )
+      
 
-      within_window window.last do      
+      page.within_window purchaseForm_window do      
+
+        expect(page).to have_selector( place_order_title_in_place_order_form )
+
+        expect(page).to have_selector( purchase_order_button_in_place_order_form )
 
         fill_in name_in_place_order_form, :with => "Pirandello"
 
-   #   fill_in country_in_place_order_form, :with => "Italy"
+        fill_in country_in_place_order_form, :with => "Italy"
 
-  #    fill_in city_in_place_order_form, :with => "Agrigento"
+        fill_in city_in_place_order_form, :with => "Agrigento"
 
-   #   fill_in credit_card_in_place_order_form, :with => "123456778"
+        fill_in credit_card_in_place_order_form, :with => "123456778"
 #
       end
 
