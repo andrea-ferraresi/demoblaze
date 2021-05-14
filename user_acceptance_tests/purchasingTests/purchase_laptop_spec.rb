@@ -50,6 +50,7 @@ feature "purchase a laptop" do
 
       find(:xpath,delete_dell_i7_8gb_from_cart).click
 
+
 binding.pry
 
       find(:xpath,place_order_button).click
@@ -71,11 +72,11 @@ binding.pry
 
         expect(page).to have_selector( purchase_order_button_in_place_order_form )
 
-       binding.pry
+      binding.pry
 
         find(:css, name_in_place_order_form).click
 
-    #    binding.pry
+        binding.pry
 
         fill_in name_locator_in_placeOrder_form, :with => "Pirandello"
 
@@ -94,7 +95,7 @@ binding.pry
         fill_in year_in_place_order_form, :with => "2023"
 
         find(:css, purchase_order_button_in_place_order_form).click
-#
+
       end
 
 
